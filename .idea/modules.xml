@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/mp16_my_personal_todolist_ui.iml" filepath="$PROJECT_DIR$/.idea/mp16_my_personal_todolist_ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mylistToDo-Mongodb/mylisttodo.iml" filepath="$PROJECT_DIR$/mylistToDo-Mongodb/mylisttodo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mylisttodoui/mylisttodoUi.iml" filepath="$PROJECT_DIR$/mylisttodoui/mylisttodoUi.iml" />
+    </modules>
+  </component>
+</project>
