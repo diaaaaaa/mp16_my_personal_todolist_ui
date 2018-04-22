@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Todo List</title>
+</head>
+<body>
+<center><h1>ToDo List</h1>
+<h3 th:if="${#lists.isEmpty(todo)}"></h3>
+  <table th:if="${not #lists.isEmpty(todo)}">
+
+    <thead>
+    <tr>
+        <th>Task</th>
+
+    </tr>
+    </thead>
+
+    <tbody th:remove="all-but-first">
+
+    <tr th:each="todo : ${todos}">
+        <td th:text="${todo.task}"></td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td th:if="${todo.done}==true" >
+            <form th:action="@{/{id}/undone(id=${todo.id})}" method="post">
+                <button type="submit" class="btn btn-success">DONE</button>
+            </form>
+        </td>
+        <td th:if="${todo.done}==false" >
+            <form th:action="@{/{id}/done(id=${todo.id})}" method="post">
+                <button type="submit" class = "btn btn-primary">TODO</button>
+            </form>
+        </td>
+        <td>    </td>
+        <td>    </td>
+        <td>    </td>
+        <td>    </td>
+        <td>
+            <form th:action="@{/{id}/delete(id=${todo.id})}" method="post">
+                <button type="submit" class = "btn btn-danger">DELETE</button>
+            </form>
+        </td>
+    </tr>
+
+
+    </tbody>
+
+    <form th:action="@{/addtasks}" th:object="${todo}"  method="post">
+        <input th:field="*{task}" placeholder="add task" class="form-control form-group col-md-6"/>
+        <button type="submit" class="btn btn-info">add</button>
+    </form>
+
+</center>
+</table>
+
+</body>
+</html>
